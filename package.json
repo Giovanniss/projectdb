@@ -1,23 +1,26 @@
 {
-  "name": "db1",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "projetobd",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "create-react-app": "^2.0.4"
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "react-scripts": "2.1.1"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Giovanniss/projectdb.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Giovanniss/projectdb/issues"
-  },
-  "homepage": "https://github.com/Giovanniss/projectdb#readme"
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+
 }
