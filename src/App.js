@@ -8,6 +8,9 @@ class App extends Component {
       <div className="App">
       
         <Toolbar />
+        <main style={{marginTop:'64px'}}>
+          <p>conteudo do site vem aqui em baixo. pode exportar outros componentes</p>
+        </main>
       </div>
     );
   }
