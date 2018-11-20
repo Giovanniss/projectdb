@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+##Personal notes
+i'm very happy about React, the tecnology is incridible and exciting.
+The process to the learn is a very difficult but I don't care.
+
 ## Available Scripts
 
 In the project directory, you can run:
