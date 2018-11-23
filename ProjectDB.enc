@@ -1,0 +1,96 @@
+use projectdb;
+
+create table usuario(
+IDusuario integer primary key,
+admin boolean,
+senha varchar(45),
+login varchar(45)
+);
+
+create table pais(
+IDpais integer primary key,
+sigla varchar(3),
+nome varchar(100)
+);
+
+create table estado(
+IDestado integer,
+nome varchar(100),
+UF char(3),
+IDpais integer,
+primary key(IDestado, IDpais),
+foreign key (IDpais) references pais(IDpais)
+);
+
+create table cidade(
+IDcidade integer,
+nome varchar(100),
+IDestado integer,
+primary key(IDcidade, IDestado),
+foreign key (IDestado) references estado(IDestado)
+);
+
+create table pessoa(
+IDpessoa integer primary key,
+nome varchar(100),
+datanasc date,
+CPF char(14),
+sexo char(1)
+);
+
+create table endereco(
+IDendereco integer,
+numero char(10),
+rua varchar(100),
+bairro varchar(100),
+IDcidade integer,
+IDpessoa integer,
+primary key(IDendereco, IDcidade, IDpessoa),
+foreign key (IDcidade) references cidade(IDcidade),
+foreign key (IDpessoa) references pessoa(IDpessoa)
+);
+
+create table contato(
+IDcontato integer,
+telefone varchar(15),
+email varchar(50),
+IDpessoa integer,
+primary key (IDcontato, IDpessoa),
+foreign key (IDpessoa) references pessoa(IDpessoa)
+);
+
+create table especialidade(
+IDespecial integer primary key,
+descricao varchar(45)
+);
+
+create table especialidade_medico(
+CRM char(6),
+IDpessoa integer,
+IDespecial integer,
+primary key(CRM, IDpessoa, IDespecial),
+foreign key (IDpessoa) references pessoa(IDpessoa),
+foreign key (IDespecial) references especialidade(IDespecial)
+);
+
+create table convenio(
+IDconvenio integer primary key,
+descricao varchar(45),
+empresa varchar(45),
+desconto decimal(4,1)
+);
+
+create table consulta(
+IDconsulta integer,
+dataconsulta date,
+horaconsulta date,
+precoconsulta decimal(11,2),
+IDconvenio integer,
+IDmedico integer,
+IDpaciente integer,
+primary key (IDconsulta, IDconvenio, IDmedico, IDpaciente),
+foreign key (IDconvenio) references convenio (IDconvenio),
+foreign key (IDmedico) references pessoa(IDpessoa),
+foreign key (IDpaciente) references pessoa(IDpessoa)
+);
+
