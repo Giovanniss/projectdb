@@ -12,7 +12,7 @@ const toolbar = props => (
             <div className="spacer" />
             <div className="toolbar_items">
                 <ul>
-                    <li><a href="/"> Sistema</a></li>
+                    <li><a href="/pagina1.js"> Sistema</a></li>
                     <li><a href="/"> Agendamento</a></li>
                     <li><a href="/"> Cadastro de Clientes</a></li>
                 </ul>
