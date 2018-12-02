@@ -1,0 +1,15 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1
+
+# ----------------------------------------------------------------------
+# | File access                                                        |
+# ----------------------------------------------------------------------
+# Bloqueia o acesso aos diretorios sem um documento padrao.
+
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+

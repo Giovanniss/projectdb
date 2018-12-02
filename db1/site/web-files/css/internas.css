@@ -1,0 +1,17 @@
+
+/**
+ * Descrição: Estilização da página inicial, assim como suas internas.
+ * Developer: Giovanni Gustavo
+ */
+
+/** ************************************************************************* */
+/** ************************ INICIO ESTILIZAÇÃO BODY  *********************** */
+/** ************************************************************************* */
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url('./../font/RobotoCondensed-Bold.ttf');
+}
+@font-face {
+    font-family: "Cabin";
+    src: url('./../font/Cabin-Regular.ttf');
+}
