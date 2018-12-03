@@ -1,37 +1,37 @@
 use projectdb;
 
 create table usuario(
-IDusuario integer primary key,
+id integer AUTO_INCREMENT PRIMARY KEY,
 admin boolean,
 senha varchar(45),
 login varchar(45)
 );
 
 create table pais(
-IDpais integer primary key,
+id integer AUTO_INCREMENT PRIMARY KEY,
 sigla varchar(3),
 nome varchar(100)
 );
 
 create table estado(
-IDestado integer,
+id integer AUTO_INCREMENT PRIMARY KEY,
 nome varchar(100),
 UF char(3),
-IDpais integer,
-primary key(IDestado, IDpais),
-foreign key (IDpais) references pais(IDpais)
+id_pais integer,
+primary key(id_pais),
+foreign key (id_pais) references pais(id)
 );
 
 create table cidade(
-IDcidade integer,
+id integer AUTO_INCREMENT PRIMARY KEY,
 nome varchar(100),
-IDestado integer,
-primary key(IDcidade, IDestado),
-foreign key (IDestado) references estado(IDestado)
+id_estado integer,
+primary key(id_estado),
+foreign key (id_estado) references estado(id)
 );
 
 create table pessoa(
-IDpessoa integer primary key,
+id integer primary key AUTO_INCREMENT PRIMARY KEY,
 nome varchar(100),
 datanasc date,
 CPF char(14),
@@ -39,58 +39,58 @@ sexo char(1)
 );
 
 create table endereco(
-IDendereco integer,
+id integer AUTO_INCREMENT PRIMARY KEY,
 numero char(10),
 rua varchar(100),
 bairro varchar(100),
-IDcidade integer,
-IDpessoa integer,
-primary key(IDendereco, IDcidade, IDpessoa),
-foreign key (IDcidade) references cidade(IDcidade),
-foreign key (IDpessoa) references pessoa(IDpessoa)
+id_cidade integer,
+id_pessoa integer,
+primary key(id_cidade, id_pessoa),
+foreign key (id_cidade) references cidade(id),
+foreign key (id_pessoa) references pessoa(id)
 );
 
 create table contato(
-IDcontato integer,
+id integer AUTO_INCREMENT PRIMARY KEY,
 telefone varchar(15),
 email varchar(50),
-IDpessoa integer,
-primary key (IDcontato, IDpessoa),
-foreign key (IDpessoa) references pessoa(IDpessoa)
+id_pessoa integer,
+primary key (id_pessoa),
+foreign key (id_pessoa) references pessoa(id)
 );
 
 create table especialidade(
-IDespecial integer primary key,
+id integer AUTO_INCREMENT PRIMARY KEY,
 descricao varchar(45)
 );
 
 create table especialidade_medico(
 CRM char(6),
-IDpessoa integer,
-IDespecial integer,
-primary key(CRM, IDpessoa, IDespecial),
-foreign key (IDpessoa) references pessoa(IDpessoa),
-foreign key (IDespecial) references especialidade(IDespecial)
+id_pessoa integer,
+id_especial integer,
+primary key(CRM, id_pessoa, id_especial),
+foreign key (id_pessoa) references pessoa(id),
+foreign key (id_especial) references especialidade(id)
 );
 
 create table convenio(
-IDconvenio integer primary key,
+id integer AUTO_INCREMENT PRIMARY KEY,
 descricao varchar(45),
 empresa varchar(45),
 desconto decimal(4,1)
 );
 
 create table consulta(
-IDconsulta integer,
+id integer AUTO_INCREMENT PRIMARY KEY,
 dataconsulta date,
 horaconsulta date,
 precoconsulta decimal(11,2),
-IDconvenio integer,
-IDmedico integer,
-IDpaciente integer,
-primary key (IDconsulta, IDconvenio, IDmedico, IDpaciente),
-foreign key (IDconvenio) references convenio (IDconvenio),
-foreign key (IDmedico) references pessoa(IDpessoa),
-foreign key (IDpaciente) references pessoa(IDpessoa)
+id_convenio integer,
+id_medico integer,
+id_paciente integer,
+primary key (id_convenio, id_medico, id_paciente),
+foreign key (id_convenio) references convenio (id),
+foreign key (id_medico) references pessoa(id),
+foreign key (id_pessoa) references pessoa(id)
 );
 
