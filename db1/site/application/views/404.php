@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="<?= LANG ?>">
     <head>
-        <title>Clube TerraFM - Página não encontrata</title>
+        <title>Página não encontrata</title>
         <?php include_once(PATH_TELA."estrutura/tag-header.php"); ?>
     </head>
 

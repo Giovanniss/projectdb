@@ -5,9 +5,6 @@
 <meta charset="UTF-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<meta name="robots" content="index,follow">
-<meta name="googlebot" content="noodp">
 <meta name="coverage" content="Worldwide">
 
 <!-- Icone apresentado na aba do navegador  -->
@@ -16,11 +13,7 @@
 <!-- Bootstrap -->
 <link href="<?= PATH_FRAMEWORK ?>bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Estilo Próprio TerraFM -->
-<link href="<?= PATH_CSS ?>sidebar.css" rel="stylesheet">
-<script src="<?= PATH_JS ?>sidebar.js"></script>
-
-<!-- Estilo Próprio TerraClube -->
+<!-- Estilo Próprio -->
 <link href="<?= PATH_CSS ?>index.css" rel="stylesheet">
 
 <!-- Animation.css -->

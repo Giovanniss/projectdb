@@ -3,7 +3,7 @@
     /**
      * Endereço raiz do website
      */
-    define('BASE_URL', "http://" . $_SERVER['SERVER_NAME'] . 'db1/site/clube');
+    define('BASE_URL', "http://" . $_SERVER['SERVER_NAME'] . '/db1/site/');
 
     /**
      * Linguagem padrão das páginas HTML

@@ -1,28 +1,113 @@
-/**
- * Descrição: Estilização da página inicial da TERRA CLUBE, assim como suas internas.
- * Developer: Giovanni Gustavo
- */
+/************************************************************************** */
+/* *****************************   CABEÇALHO  ***************************** */
+/************************************************************************** */
+header > nav#body-main-menu { 
+    padding: 7px;
+}
+header > nav#body-main-menu > div.container {
+    padding: 0px;
+}
+header > nav#body-main-menu > div.container > div#main-navbar-collapse {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+header > nav#body-main-menu > div.container > div#main-navbar-collapse > ul {
+    padding: 0px;
+    margin: 0px;
+}
+header > nav#body-main-menu > div.container > div#main-navbar-collapse > ul > li {
+    list-style: none;
+    display: inline-block;
+    padding-right: 3px;
+}
 
-/** ************************************************************************* */
-/** ****************************** INICIO BODY ****************************** */
-/** ************************************************************************* */
-@font-face {
-    font-family: "Roboto Condensed";
-    src: url('./../font/RobotoCondensed-Bold.ttf');
+/************************************************************************** */
+/* *****************************   INDEX      ***************************** */
+/************************************************************************** */
+section#body-index {
+    padding: 0px;
 }
-@font-face {
-    font-family: "Cabin";
-    src: url('./../font/Cabin-Regular.ttf');
+section#body-index > div.container {
+    /* border: 1px solid red; */
+    margin-top: 175px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-body {
-    background: #f1f1f1;
+section#body-index > div.container > div.row {
+    /* border: 1px solid pink */
+    padding: 0px;
+}
+section#body-index > div.container > div.row > div.col-lg-12 {
+    padding: 0px;
+}
+section#body-index > div.container > div.row > div.col-lg-12 > h2 { 
+    color: #1f3c8c;
+}
+section#body-index > div.container > div.row > div.col-lg-12 > ul {
+
 }
 
-/* *********************************************************************** */
-/* *************************** INICIO DO FOOTER ************************** */
-/* *********************************************************************** */
-footer#body-footer {
-    font-family: "Cabin";
-    background: #0E7874;
-    margin-top: 100px;     
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************************************************************************** */
+/* *****************************   RODAPÉ     ***************************** */
+/************************************************************************** */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+  }

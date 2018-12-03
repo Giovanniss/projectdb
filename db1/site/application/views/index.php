@@ -5,7 +5,7 @@
 <html lang="<?= LANG ?>">
     <head>
         <title>ProjetoBD</title>
-
+        
         <?php include_once(PATH_TELA."estrutura/tag-header.php"); ?>
     
         <!-- <script type="text/javascript">
@@ -50,7 +50,7 @@
         <!-- ************************************************************************* -->
         <!-- ******** INICIO VERIFICAÇÃO DO JAVASCRIPT HABILITADO/DESABILITADO ******* -->
         <!-- ************************************************************************* -->
-        <?php include(PATH_TELA."estrutura/noscript.php"); ?>
+        <?php include(PATH_TELA."estrutura/noscript.php");?>
         <!-- ************************************************************************* -->
         <!-- *****// FIM DA VERIFICAÇÃO DO JAVASCRIPT HABILITADO/DESABILITADO //****** -->
         <!-- ************************************************************************* -->
@@ -63,7 +63,29 @@
         <!-- ************************************************************************* -->
         <!-- ************************// FIM DA ÁREA DE MENU //************************ -->
         <!-- ************************************************************************* -->
+        <section class="container-fluid" id="body-index">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>
+                            Bem-vindo ao Q-Life, escolha uma das opções no menu superior.
+                        </h2>
+                        <p>Objetivos do sistema:</p>
+                        <ul>
+                            <li>Realizar CRUD simples</li>
+                            <li>Realizar CRUD um-para-muitos</li>
+                            <li>Aprimorar/Aprender o desenvolvimento WEB</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
+        </section>
+
+
+
+
+        
 
         <!-- ************************************************************************* -->
         <!-- ************************** INICIO ÁREA RODAPÉ *************************** -->
@@ -80,7 +102,6 @@
         <!-- Owl Carousel -->
         <link href="<?= PATH_FRAMEWORK ?>owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
         <link href="<?= PATH_FRAMEWORK ?>owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
         <script src="<?= PATH_FRAMEWORK ?>bootstrap/js/bootstrap.min.js"></script>
