@@ -1,6 +1,6 @@
 <?php
 
-class AcessoMedicoController extends Controlador {
+class MedicoController extends Controlador {
 
 	/**
 	 * Descricao

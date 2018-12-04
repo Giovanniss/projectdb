@@ -1,6 +1,6 @@
 <?php
 
-class AlteraCliente extends Controlador {
+class PacienteController extends Controlador {
 
 	/**
 	 * Descricao
@@ -8,6 +8,6 @@ class AlteraCliente extends Controlador {
 	 */
 	public function index() {
 
-		$this->tela('altera-cliente');
+		$this->tela('acesso-paciente');
 	}	
 }

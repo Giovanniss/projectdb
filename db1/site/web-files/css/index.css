@@ -102,8 +102,8 @@ section#body-index > div.container > div.row > div.col-lg-12 > ul {
 /************************************************************************** */
 /* *****************************   RODAPÉ     ***************************** */
 /************************************************************************** */
-.footer {
-    position: absolute;
+#footer {
+    margin-top: 30px;
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
