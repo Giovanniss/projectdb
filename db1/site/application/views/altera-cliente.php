@@ -1,5 +1,11 @@
 <?php
     $helper = new LinksTexto();
+    // var_dump($view_clientes);
+    if (isset($_SESSION['alterar'])){
+        var_dump($_SESSION['alterar']);
+        unset($_SESSION['alterar']);
+
+    }
 ?>
 <!DOCTYPE html>
 <html lang="<?= LANG ?>">
@@ -10,32 +16,31 @@
         
         <link href="<?= PATH_CSS ?>internas.css" rel="stylesheet">
 
-        <!-- <script type="text/javascript">
-            $(document).ready(function() {
-                $(".btn-login").click(function() { 
-                    if (validaFormLogin()) {
-                        var formCarteirinha = $("[name$='formCarteirinha']").serialize();
+        <script type="text/javascript">
+            $(document).ready(function() {    
+                $(".btn-edit").click(function() { 
+                    var id_user = $(this).attr('data-id');
+                    var acao    = $(this).attr('id'); 
+
                         jQuery.ajax({
                             type: "POST",
-                            url: "<?= BASE_URL ?>login/envialogin",
-                            data: formCarteirinha,
+                            url: "<?= BASE_URL ?>altera/alterarcliente",
+                            data: {acao:acao,id:id_user},
                             success: function (data) {
 
-                                if (data == "ok") {
-                                    $("#div_error").css({ "visibility": "hidden"});
-                                        $('.loading').delay(50).fadeIn(100);
-                                        setTimeout(function() {
-                                            window.location.href = "<?= BASE_URL; ?>login"; 
-                                    }, 1000);
-                                }                            
-                                if (data == "erro") {
-                                    $('#div_error').html('<b style="font-size:11px;color:red;"> Seu usuário ou senha estão incorretos.</b>'); 
-                                    $("#user").css("border","1px solid red");                             
-                                    $("#senha").css("border","1px solid red");                            
-                                }
+                                if (data != "erro") {
+                                    console.log(data);
+                                    
+                                    setTimeout(function() {
+                                        window.location.href = "<?= BASE_URL; ?>altera/cliente";
+                                    }, 2000);             
+                                    //     $('.loading').delay(50).fadeIn(100);
+                                    //     setTimeout(function() {
+                                    //         window.location.href = "<?= BASE_URL; ?>login"; 
+                                    // }, 1000);
+                                }                
                             }
-                        });  
-                    }              
+                        });           
                 });
 
                 $(".btn-sair").click(function() {
@@ -45,7 +50,7 @@
                     }, 2000);     
                 });
             });
-        </script> -->
+        </script>
     </head>
 
     <body>
@@ -69,18 +74,65 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2>
+                        <h2 class="mb-4 mt-3">
                             Alteração de Clientes.
                         </h2>
                     </div>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">E-mail</th>
+                                <th scope="col">Ação</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        <?php if ($view_clientes) { ?>
+                            <?php foreach ($view_clientes as $ind => $clientes) { ?>
+                                <tr>    
+                                    <th scope="row"> <?= $clientes['id'] ?> </th>
+                                    <td><?= $clientes['nome'] ?> </td>
+                                    <td><?= $clientes['email'] ?> </td>
+                                    <td>                 
+                                        <button class="tim btn-edit" type="button" id="editar" data-id="<?= $clientes['id'] ?>"> <i class="fas fa-edit"></i> </button> 
+                                        | 
+                                        <button class="tim btn-del" type="button" id="excluir" data-id="<?= $clientes['id'] ?>"><i class="fas fa-trash-alt"></i></button>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        <?php } ?>
+
+                        <?php
+                        ?>
+                            <!-- <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>@fat</td>
+                            </tr>
+                                            $(".btn-edit").click(function() { 
+                        var id_task = $(this).attr('id');
+                        alert(id_task);
+
+                    var formCliente = $("[name$='formCliente']").serialize();
+                        jQuery.ajax({
+                            type: "POST",
+                            url: "<?= BASE_URL ?>altera/alterarcliente",
+                            data: {formCliente, id: id_task},
+                            success: function (data) {
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>@twitter</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
         </section>
 
-
-
-
-        
 
         <!-- ************************************************************************* -->
         <!-- ************************** INICIO ÁREA RODAPÉ *************************** -->

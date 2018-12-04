@@ -1,5 +1,6 @@
 <?php
     $helper = new LinksTexto();
+    session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="<?= LANG ?>">
@@ -20,7 +21,8 @@
                         url: "<?= BASE_URL ?>cadastro/enviarcadastro",
                         data: formCadastro,
                         success: function (data) {
-                        document.getElementById("innerHTML") = data;
+                        // document.getElementById("innerHTML") = data;
+                        console.log(data);
                             if (data != "erro") {
                                 $("#modal-contato").modal();
                                 setTimeout(function() {
@@ -37,7 +39,7 @@
     </head>
 
     <body>
-        <div class="result" style="margin: 150px; width: 300px; background: #f1f1f1">
+        <!-- <div class="result" style="margin: 150px; width: 300px; background: #f1f1f1"> -->
 
         </div>
         <!-- ************************************************************************* -->

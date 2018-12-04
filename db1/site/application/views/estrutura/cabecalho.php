@@ -5,7 +5,7 @@
 <header>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end" id="body-main-menu">
 		<div class="container">		
-			<a class="navbar-brand" title="Sistema" href="#">Q-Life</a>
+			<a class="navbar-brand" title="Sistema" href="<?= BASE_URL; ?>">Q-Life</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
 					<span class="navbar-toggler-icon"></span>
 			</button>

@@ -10,9 +10,6 @@ class CadastroModel extends Modelo {
     
 	private $verifica;
 
-
-
-
 	/**
 	 *  Insere no banco de dados, as informações enviadas através do formulário de contato
 	 */
@@ -31,13 +28,14 @@ class CadastroModel extends Modelo {
         $this->insert($pessoa, "pessoa");  
 
         $this->cadastraEndereco($form);  
+        $this->cadastraContato($form);
 
     } 
     /**
 	 *  Insere no banco de dados, as informações: Estado, Cidade, Endereço e Contato
 	 */
 	public function cadastraEstado($form) {
-        $this->idPais   = $this->searchPais($form['pais']);
+        $this->idPais = $this->searchPais($form['pais']);
 
         //insere primeiro o estado, dado que pais ja esta populado
         $estado = array (
@@ -47,7 +45,6 @@ class CadastroModel extends Modelo {
         );       
         $this->insert($estado, "estado");    
     }
-
 	public function cadastraCidade($form) {   
         $this->idEstado = $this->searchEstado($form['uf']);  
         //apos cadastrado estado, vamos inserir a cidade.
@@ -57,7 +54,6 @@ class CadastroModel extends Modelo {
         );
         $this->insert($cidade, "cidade");   
     }
-
     //por fim cadastra-se o endereco
 	public function cadastraEndereco($form) {  
         $this->idCidade = $this->searchCidade($form['cidade']); 
@@ -73,9 +69,9 @@ class CadastroModel extends Modelo {
         );  
         $this->insert($endereco, "endereco");   
     }
-
     public function cadastraContato($form) {   
-        //apos cadastrado estado, vamos inserir a cidade.
+        // var_dump($this->idPessoa[0]['id']);
+        // //apos cadastrado estado, vamos inserir a cidade.
         $contato = array (
             'telefone' 	       => "{$form['telefone']}",
 			'email'			   => "{$form['email']}",
@@ -96,7 +92,6 @@ class CadastroModel extends Modelo {
         // var_dump($sql);
         return $this->sql($sql);        
     }
-
     public function searchEstado($uf) {
 		$sql = "SELECT id
 				  FROM estado
@@ -105,15 +100,13 @@ class CadastroModel extends Modelo {
         // var_dump($sql);
         return $this->sql($sql);        
     }
-
 	public function searchCidade($cidade) {
 		$sql = "SELECT id
 				  FROM cidade
 				 WHERE nome = '{$cidade}'
                  LIMIT 1;";
-        return $this->sql($sql);        
-    }   
-
+        return  $this->sql($sql);        
+    }  
 	public function searchPessoa($cpf) {
 		$sql = "SELECT id
 				  FROM pessoa
